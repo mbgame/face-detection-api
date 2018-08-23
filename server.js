@@ -31,3 +31,5 @@ app.get('/profile/:id', (req,res)=> {profile.profileControl(req,res,db)});
 app.put('/image',(req,res)=> {image.imageControl(req,res,db)});
 app.post('/imageurl',(req,res)=> {image.clarifaiApi(req,res)});
 app.listen(myPort, ()=> {	console.log(`app is running on port ${myPort} `)});
+console.log(process.env.DATABASE_URL);
+console.log(db);
