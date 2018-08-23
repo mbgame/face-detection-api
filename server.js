@@ -8,18 +8,19 @@ const signin = require('./controller/signin');
 const profile = require('./controller/profile');
 const image = require('./controller/image');
 
+const myPort = process.env.PORT || 3000;
+
 const db = knex({
   client: 'pg',
   connection: {
     host : 'localhost',
-    port : 5433,
+    port : myPort,
     user : 'mbgame',
     password : '091157',
     database : 'smart-brain'
   }
 });
 
-const port = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -30,4 +31,4 @@ app.post('/register',(req,res)=> {register.registerControl(req,res,db,bcrypt)});
 app.get('/profile/:id', (req,res)=> {profile.profileControl(req,res,db)});
 app.put('/image',(req,res)=> {image.imageControl(req,res,db)});
 app.post('/imageurl',(req,res)=> {image.clarifaiApi(req,res)});
-app.listen(port, ()=> {	console.log(`app is running on port ${port} `)});
+app.listen(myPort, ()=> {	console.log(`app is running on port ${myPort} `)});
