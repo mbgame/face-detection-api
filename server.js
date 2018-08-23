@@ -10,15 +10,15 @@ const knex = require('knex');
 
 const myPort = process.env.PORT || 3000;
 
-// const db = knex({
-//   client: 'pg',
-//   connection: {
-//     host : '127.0.0.1',
-//     user : 'mbgame',
-//     password : '091157',
-//     database : 'smart-brain'
-//   }
-// });
+const db = knex({
+  client: 'pg',
+  connection: {
+    host : '127.0.0.1',
+    user : 'mbgame',
+    password : '091157',
+    database : 'smart-brain'
+  }
+});
 
 const app = express();
 app.use(bodyParser.json());
