@@ -18,7 +18,7 @@ const db = knex({
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,4 +29,4 @@ app.post('/register',(req,res)=> {register.registerControl(req,res,db,bcrypt)});
 app.get('/profile/:id', (req,res)=> {profile.profileControl(req,res,db)});
 app.put('/image',(req,res)=> {image.imageControl(req,res,db)});
 app.post('/imageurl',(req,res)=> {image.clarifaiApi(req,res)});
-app.listen(PORT, ()=> {	console.log(`app is running on port ${PORT} `)});
+app.listen(port, ()=> {	console.log(`app is running on port ${port} `)});
