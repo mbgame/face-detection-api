@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt-nodejs');
 const knex = require('knex');
-// const register = require('./controller/register');
-// const signin = require('./controller/signin');
-// const profile = require('./controller/profile');
-// const image = require('./controller/image');
+const register = require('./controller/register');
+const signin = require('./controller/signin');
+const profile = require('./controller/profile');
+const image = require('./controller/image');
 
 const myPort = process.env.PORT || 3000;
 
