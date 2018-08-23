@@ -24,7 +24,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req,res) => {console.log('app is work correctly')});
+app.get('/', (req,res) => {res.json('app is work correctly')});
 // app.get('/', (req,res) => {db.select('*').from('users').then(data=>{res.json(data);})});
 // app.post('/signin', (req,res)=> {signin.signinControl(req,res,db,bcrypt)});
 // app.post('/register',(req,res)=> {register.registerControl(req,res,db,bcrypt)});
