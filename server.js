@@ -13,8 +13,7 @@ const myPort = process.env.PORT || 3000;
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'db',
-    port : 5432,
+    host : '127.0.0.2',
     user : 'mbgame',
     password : '091157',
     database : 'smart-brain'
